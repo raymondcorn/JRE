@@ -30,7 +30,7 @@
       min-height: 0;
     }
     .sidebar {
-      width: 260px;
+      width: 280px;
       max-width: 100%;
       background: #e5e7eb;
       border-right: 1px solid #d1d5db;
@@ -38,6 +38,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      overflow-y: auto;
     }
     .sidebar-title {
       font-size: 0.9rem;
@@ -57,6 +58,10 @@
       flex-direction: column;
       gap: 0.1rem;
     }
+    .supplier-btn.small {
+      font-size: 0.85rem;
+      padding-left: 1.6rem;
+    }
     .supplier-btn small {
       font-size: 0.75rem;
       color: #4b5563;
@@ -64,6 +69,15 @@
     .supplier-btn.active {
       background: #111827;
       color: #f9fafb;
+    }
+    .group-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #4b5563;
+      margin-top: 0.25rem;
+      margin-bottom: -0.25rem;
+      padding: 0 0.1rem;
     }
     .main {
       flex: 1;
@@ -139,6 +153,9 @@
         border-right: none;
         border-bottom: 1px solid #d1d5db;
       }
+      .group-label {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -149,22 +166,38 @@
     <aside class="sidebar">
       <div class="sidebar-title">Fournisseurs</div>
 
-      <!-- Kaviari -->
+      <div class="group-label">Kaviari</div>
       <button class="supplier-btn active" data-id="kaviari">
         <span>Kaviari</span>
         <small>Tarif restauration 2025</small>
       </button>
 
-      <!-- Joseph Perrier : tarif -->
+      <div class="group-label">Joseph Perrier</div>
       <button class="supplier-btn" data-id="jp_tarif">
         <span>Joseph Perrier</span>
         <small>Tarif JRE 2025</small>
       </button>
-
-      <!-- Joseph Perrier : bon de commande -->
       <button class="supplier-btn" data-id="jp_bc">
         <span>Joseph Perrier</span>
         <small>Bon de commande JRE 2025</small>
+      </button>
+
+      <div class="group-label">Moisans</div>
+      <button class="supplier-btn small" data-id="mo_trad_dj">
+        <span>TRAD 2024 – DJ</span>
+        <small>Tarifs PRO TRAD 2024 DJ V29012024</small>
+      </button>
+      <button class="supplier-btn small" data-id="mo_trad">
+        <span>TRAD 2024</span>
+        <small>Tarifs PRO TRAD 2024</small>
+      </button>
+      <button class="supplier-btn small" data-id="mo_vins">
+        <span>Vins 2024</span>
+        <small>Catalogue des vins PRO</small>
+      </button>
+      <button class="supplier-btn small" data-id="mo_alcools">
+        <span>Alcools dénaturés 2023</span>
+        <small>Tarifs généraux alcools dénaturés</small>
       </button>
     </aside>
 
@@ -208,6 +241,26 @@
         name: "Joseph Perrier",
         desc: "Bon de commande JRE 2025",
         file: "JP_Offre JRE_Bon de commande.pdf"
+      },
+      mo_trad_dj: {
+        name: "Moisans",
+        desc: "Tarifs PRO TRAD 2024 DJ V29012024",
+        file: "Tarifs PRO TRAD 2024 DJ V29012024.pdf"
+      },
+      mo_trad: {
+        name: "Moisans",
+        desc: "Tarifs PRO TRAD 2024",
+        file: "Tarifs PRO TRAD 2024.pdf"
+      },
+      mo_vins: {
+        name: "Moisans",
+        desc: "Catalogue des vins 2024 PRO",
+        file: "VINS 2024 PRO.pdf"
+      },
+      mo_alcools: {
+        name: "Moisans",
+        desc: "Tarifs généraux alcools dénaturés 2023",
+        file: "2023 Tarifs Moisans alcools Dénaturés.pdf"
       }
     };
 
