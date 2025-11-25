@@ -149,18 +149,23 @@
     <aside class="sidebar">
       <div class="sidebar-title">Fournisseurs</div>
 
-      <!-- Fournisseur Kaviari -->
+      <!-- Kaviari -->
       <button class="supplier-btn active" data-id="kaviari">
         <span>Kaviari</span>
         <small>Tarif restauration 2025</small>
       </button>
 
-      <!-- Exemple à dupliquer pour d'autres fournisseurs :
-      <button class="supplier-btn" data-id="autre">
-        <span>Nom fournisseur</span>
-        <small>Description / année</small>
+      <!-- Joseph Perrier : tarif -->
+      <button class="supplier-btn" data-id="jp_tarif">
+        <span>Joseph Perrier</span>
+        <small>Tarif JRE 2025</small>
       </button>
-      -->
+
+      <!-- Joseph Perrier : bon de commande -->
+      <button class="supplier-btn" data-id="jp_bc">
+        <span>Joseph Perrier</span>
+        <small>Bon de commande JRE 2025</small>
+      </button>
     </aside>
 
     <main class="main">
@@ -187,19 +192,23 @@
   </div>
 
   <script>
-    // Liste des PDF fournisseurs (tu peux en ajouter d'autres)
+    // Associe chaque bouton à un PDF
     const pdfs = {
       kaviari: {
         name: "Kaviari",
         desc: "Tarif restauration 2025",
         file: "TARIF_KAVIARI_2025.pdf"
+      },
+      jp_tarif: {
+        name: "Joseph Perrier",
+        desc: "Tarif JRE 2025",
+        file: "Joseph Perrier_Tarif JRE 2025.pdf"
+      },
+      jp_bc: {
+        name: "Joseph Perrier",
+        desc: "Bon de commande JRE 2025",
+        file: "JP_Offre JRE_Bon de commande.pdf"
       }
-      // Exemple d'autre fournisseur à ajouter :
-      // ,autre: {
-      //   name: "Autre fournisseur",
-      //   desc: "Tarif 2025",
-      //   file: "TARIF_AUTRE_2025.pdf"
-      // }
     };
 
     const buttons = document.querySelectorAll(".supplier-btn");
